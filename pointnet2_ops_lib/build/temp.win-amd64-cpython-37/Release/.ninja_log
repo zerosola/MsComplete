@@ -1,0 +1,6 @@
+# ninja log v5
+562	16926	7504259037534762	E:/PointTr_N/PoinTr-master/pointnet2_ops_lib/build/temp.win-amd64-cpython-37/Release/pointnet2_ops/_ext-src/src/sampling.obj	4de4d6e40277a5e
+394	17077	7504259037549696	E:/PointTr_N/PoinTr-master/pointnet2_ops_lib/build/temp.win-amd64-cpython-37/Release/pointnet2_ops/_ext-src/src/interpolate.obj	634a3dc170557525
+158	17212	7504259037539670	E:/PointTr_N/PoinTr-master/pointnet2_ops_lib/build/temp.win-amd64-cpython-37/Release/pointnet2_ops/_ext-src/src/bindings.obj	cdd0b353be033adf
+237	17353	7504259037534762	E:/PointTr_N/PoinTr-master/pointnet2_ops_lib/build/temp.win-amd64-cpython-37/Release/pointnet2_ops/_ext-src/src/ball_query.obj	2197aab75e311a40
+315	17503	7504259037529714	E:/PointTr_N/PoinTr-master/pointnet2_ops_lib/build/temp.win-amd64-cpython-37/Release/pointnet2_ops/_ext-src/src/group_points.obj	3a855bb04cff1a8c

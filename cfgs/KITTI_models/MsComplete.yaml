@@ -1,0 +1,94 @@
+# --------------------------------------------------------------------
+
+optimizer : {
+  type: AdamW,
+  kwargs: {
+  lr : 0.0001,           # 无预热，初始学习率保守一点， 0.0001
+  weight_decay : 0.0005     # # 0.01  0.0005
+}}
+
+
+scheduler: {
+  type: LambdaLR,
+  kwargs: {
+  decay_strategy: 'cosine', # 直接用余弦下降
+  max_epoch: 400,        # 你的总 epoch 数
+  lowest_decay: 0.1
+}}
+
+
+
+bnmscheduler: {
+  type: Lambda,
+  kwargs: {
+  decay_strategy: 'cosine', # 【同步修改】BN 动量也使用余弦衰减
+  max_epoch: 400,           # 【同步对齐】与学习率的周期完全一致
+  bn_momentum: 0.9,         # 初始 BN 动量 (保持 0.9 即可)
+  lowest_decay: 0.1
+}}
+
+
+dataset : {
+  train : { _base_: cfgs/dataset_configs/PCNCars.yaml,
+            others: {subset: 'train'}},
+  val : { _base_: cfgs/dataset_configs/PCNCars.yaml,
+            others: {subset: 'test'}},
+  test : { _base_: cfgs/dataset_configs/KITTI.yaml,
+            others: {subset: 'test'}}}
+
+model : {
+    NAME: MsComplete,
+    num_query: 512,
+    num_points: 16384,
+
+    center_num: [1024, 512],  # [1024, 512]
+    center_num_stage1: [512, 256],  # [512, 256]
+
+
+    global_feature_dim: 1024,
+    encoder_type: graph,
+    decoder_type: fc, # fold fc
+
+    decoder_config_stage1: {
+      embed_dim: 384,
+      depth: 6,
+      num_heads: 6,
+      k: 8,
+      n_group: 2,
+      mlp_ratio: 2.,
+      cross_attn_block_style_list: ['attn', 'attn', 'attn', 'attn', 'attn', 'attn' ], # attn-graph
+      cross_attn_combine_style: 'concat',
+    },
+
+
+    encoder_config: {
+      embed_dim: 384,
+      depth: 6,
+      num_heads: 6,
+      k: 8,
+      n_group: 2,
+      mlp_ratio: 2.,
+      block_style_list: [ 'attn-graph', 'attn', 'attn', 'attn', 'attn', 'attn' ], # attn-graph
+      combine_style: 'concat',
+    },
+
+    decoder_config: {
+      embed_dim: 384,
+      depth: 8,
+      num_heads: 6,
+      k: 8,
+      n_group: 2,
+      mlp_ratio: 2.,
+      self_attn_block_style_list: [ 'attn-graph', 'attn', 'attn', 'attn', 'attn', 'attn', 'attn', 'attn' ], # attn-graph
+      self_attn_combine_style: 'concat',
+      cross_attn_block_style_list: [ 'attn-graph', 'attn', 'attn', 'attn', 'attn', 'attn', 'attn', 'attn' ], # attn-graph
+      cross_attn_combine_style: 'concat',
+    }
+
+}
+
+total_bs : 32
+step_per_update : 1  # 1
+max_epoch : 400  # 500
+
+consider_metric: CDL1

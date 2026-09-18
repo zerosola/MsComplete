@@ -1,0 +1,10 @@
+# ninja log v5
+0	9983	1698081969680721702	/home/ubuntu/Desktop/code/StateOfTheArt/seedformer-master/codes/pointnet2_ops_lib/build/temp.linux-x86_64-cpython-39/pointnet2_ops/_ext-src/src/group_points.o	19f68e9a95b401a2
+0	9991	1698081969684721760	/home/ubuntu/Desktop/code/StateOfTheArt/seedformer-master/codes/pointnet2_ops_lib/build/temp.linux-x86_64-cpython-39/pointnet2_ops/_ext-src/src/interpolate.o	2d99280681e6ad9c
+1	10003	1698081969708722100	/home/ubuntu/Desktop/code/StateOfTheArt/seedformer-master/codes/pointnet2_ops_lib/build/temp.linux-x86_64-cpython-39/pointnet2_ops/_ext-src/src/sampling.o	83bd466e13c3b10b
+0	10120	1698081969820723689	/home/ubuntu/Desktop/code/StateOfTheArt/seedformer-master/codes/pointnet2_ops_lib/build/temp.linux-x86_64-cpython-39/pointnet2_ops/_ext-src/src/ball_query.o	e0b7c42d52e2b00d
+0	10314	1698081970016726467	/home/ubuntu/Desktop/code/StateOfTheArt/seedformer-master/codes/pointnet2_ops_lib/build/temp.linux-x86_64-cpython-39/pointnet2_ops/_ext-src/src/bindings.o	ea7430fe17983227
+1	24555	1698081984252928855	/home/ubuntu/Desktop/code/StateOfTheArt/seedformer-master/codes/pointnet2_ops_lib/build/temp.linux-x86_64-cpython-39/pointnet2_ops/_ext-src/src/interpolate_gpu.o	f431395429d88bc
+0	24782	1698081984480932104	/home/ubuntu/Desktop/code/StateOfTheArt/seedformer-master/codes/pointnet2_ops_lib/build/temp.linux-x86_64-cpython-39/pointnet2_ops/_ext-src/src/group_points_gpu.o	efa9f8d262aab6bb
+0	25558	1698081985256943165	/home/ubuntu/Desktop/code/StateOfTheArt/seedformer-master/codes/pointnet2_ops_lib/build/temp.linux-x86_64-cpython-39/pointnet2_ops/_ext-src/src/ball_query_gpu.o	73a3b9fa28dbe9c7
+1	27164	1698081986860966035	/home/ubuntu/Desktop/code/StateOfTheArt/seedformer-master/codes/pointnet2_ops_lib/build/temp.linux-x86_64-cpython-39/pointnet2_ops/_ext-src/src/sampling_gpu.o	91b5f717bece0e74
